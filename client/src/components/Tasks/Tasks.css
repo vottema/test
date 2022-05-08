@@ -1,0 +1,16 @@
+.tasks {
+  margin: 20px;
+  display: flex;
+  justify-content: space-around;
+}
+.task {
+  width: 400px;
+  min-height: 200px;
+}
+
+.statusBtn {
+  margin: 5px;
+}
+.saveBtn {
+  margin: 5px;
+}
