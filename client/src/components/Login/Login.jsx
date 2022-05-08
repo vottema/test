@@ -13,7 +13,7 @@ function Login(props) {
       name: inputName.current.value,
       password: inputPassword.current.value,
     }
-    fetch("http://localhost:4000/login", {
+    fetch("/login", {
       credentials: 'include',
       method: "POST",
       headers: { "Content-Type": "Application/json" },
@@ -22,7 +22,7 @@ function Login(props) {
       .then(res => {
         if (res.status === 201) {
           setTimeout(() => {
-            window.location.href = 'http://localhost:3000'
+            window.location.href = '/'
           }, 1000);
         }
         setStatus(res.status)

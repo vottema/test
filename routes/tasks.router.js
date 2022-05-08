@@ -24,6 +24,7 @@ router.route("/").post((req, res) => {
 
 router.route("/update").put((req, res) => {
   const { id, status, text } = req.body;
+  console.log(text);
   if (req.session.admin) {
     if (status) {
       Task.update({ status: status }, { where: { id }, returning: true });

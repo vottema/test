@@ -3,7 +3,7 @@ import { addTaskAC, initTaskAC } from "../actionCreators/tasksAC";
 
 export const fetchAddTask = (payload) => {
   return (dispatch) => {
-    fetch("http://localhost:4000/tasks", {
+    fetch("/tasks", {
       method: "POST",
       headers: { "Content-Type": "Application/json" },
       body: JSON.stringify(payload),
@@ -12,20 +12,14 @@ export const fetchAddTask = (payload) => {
         if (res.status === 201) {
           let div = document.querySelector(".newTask");
 
-          div.insertAdjacentHTML(
-            "afterend",
-            '<div>Good</div>'
-          );
+          div.insertAdjacentHTML("afterend", "<div>Good</div>");
           setTimeout(() => {
-            window.location.href = 'http://localhost:3000'
+            window.location.href = "/";
           }, 1000);
         } else {
           let div = document.querySelector(".newTask");
 
-          div.insertAdjacentHTML(
-            "afterend",
-            '<div>Bad</div>'
-          );
+          div.insertAdjacentHTML("afterend", "<div>Bad</div>");
         }
         res.json();
       })
@@ -35,7 +29,7 @@ export const fetchAddTask = (payload) => {
 
 export const fetchInitTasks = (payload) => {
   return (dispatch) => {
-    fetch("http://localhost:4000/tasks/sort", {
+    fetch("/tasks/sort", {
       credentials: "include",
       method: "POST",
       headers: { "Content-Type": "Application/json" },
@@ -50,7 +44,7 @@ export const fetchInitTasks = (payload) => {
 };
 export const fetchUpdateTasks = (payload) => {
   return () => {
-    fetch("http://localhost:4000/tasks/update", {
+    fetch("/tasks/update", {
       credentials: "include",
       method: "PUT",
       headers: { "Content-Type": "Application/json" },
@@ -58,7 +52,7 @@ export const fetchUpdateTasks = (payload) => {
     })
       .then((data) => {
         if (data.status === 500) {
-          window.location.href = "http://localhost:3000/login";
+          window.location.href = "/login";
         }
       })
       .catch((err) => console.log(err.message));
@@ -66,13 +60,11 @@ export const fetchUpdateTasks = (payload) => {
 };
 export const fetchCheckAdmin = () => {
   return (dispatch) => {
-    fetch("http://localhost:4000/", {
+    fetch("/checkAdmin", {
       credentials: "include",
     })
-      .then((res) => res.json())
-      .then((data) => {
-        dispatch(checkAdmin(data));
-      })
-      .catch((err) => console.log(err.message));
+    .then((res) => res.json())
+    .then((data) => dispatch(checkAdmin(data.admin)))
+    .catch((err) => console.log(err.message));
   };
 };
