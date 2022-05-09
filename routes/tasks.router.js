@@ -1,6 +1,4 @@
 const router = require("express").Router();
-const { response } = require("express");
-const { where } = require("sequelize/dist");
 const { Task } = require("../db/models");
 
 router.route("/sort").post((req, res) => {
