@@ -12,6 +12,7 @@ const Tasks = ({ tasks }) => {
   const { admin } = useSelector(state => state.checkAdmin)
 
   const fulfilled = (event) => {
+    console.log(event.target.value);
     const updateStatus = { id: event.target.id, status: 'fulfilled' }
     dispatch(fetchUpdateTasks(updateStatus))
   }
