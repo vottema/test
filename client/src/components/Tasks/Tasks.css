@@ -15,10 +15,15 @@
   margin: 5px;
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 450px) {
   .tasks {
+    margin: 10px;
     display: flex;
     flex-direction: column;
     justify-content: center;
+  }
+  .task {
+    margin-top: 10px;
+    width: 300px;
   }
 }
