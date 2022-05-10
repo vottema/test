@@ -19,7 +19,6 @@ const Tasks = ({ tasks }) => {
   const inputChangeText = useRef()
   const change = (event) => {
     event.preventDefault()
-    console.log(event.target.value);
     const id = event.target.id
     const updateText = { id, text: inputChangeText.current.value }
     dispatch(fetchUpdateTasks(updateText))
