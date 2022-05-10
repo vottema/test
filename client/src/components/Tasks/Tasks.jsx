@@ -1,10 +1,9 @@
 import './Tasks.css'
 import { useDispatch, useSelector } from 'react-redux';
-import { useEffect, useRef } from 'react';
+import { useEffect } from 'react';
 import { fetchCheckAdmin, fetchUpdateTasks } from '../../redux/asyncActionCreators/tasksAAC';
 const Tasks = ({ tasks }) => {
   const dispatch = useDispatch()
-  const inputChangeText = useRef()
 
   useEffect(() => {
     dispatch(fetchCheckAdmin())
@@ -46,7 +45,7 @@ const Tasks = ({ tasks }) => {
                     <button id={task.id} onClick={fulfilled} type="submit" className="btn btn-primary statusBtn">Fulfilled</button>
                     <div className="card-footer bg-transparent border-success">
                       <form id={task.id} onSubmit={change}>
-                        <input name='changeText' ref={inputChangeText} type="text" placeholder='text' />
+                        <input name='changeText' type="text" placeholder='text' />
                         <button type="submit" className="btn btn-primary saveBtn">Save</button>
                       </form>
                     </div>
