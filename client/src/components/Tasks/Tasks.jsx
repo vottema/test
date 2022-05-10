@@ -20,7 +20,7 @@ const Tasks = ({ tasks }) => {
   const change = (event) => {
     event.preventDefault()
     const id = event.target.id
-    console.log(event.target.name.value);
+    console.log(event.target.name);
     const text = inputChangeText.current.value
     const updateText = { id, text }
     dispatch(fetchUpdateTasks(updateText))
