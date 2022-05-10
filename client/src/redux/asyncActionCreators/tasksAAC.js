@@ -23,7 +23,7 @@ export const fetchAddTask = (payload) => {
           setTimeout(() => {
             let delDiv = document.querySelector(".mess");
             delDiv.remove();
-          }, 1000);
+          }, 2000);
         }
         res.json();
       })
