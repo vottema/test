@@ -24,6 +24,6 @@
   }
   .task {
     margin-top: 10px;
-    width: 300px;
+    max-width: 350px;
   }
 }
