@@ -5,7 +5,7 @@ const router = express.Router();
 router.get("/", (req, res) => {
   try {
     req.session.destroy();
-    res.clearCookie("sid");
+    res.clearCookie("sid", { path: "https://test-bj-todol.herokuapp.com/" });
   } catch (error) {
     res.end();
   }
