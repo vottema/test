@@ -17,9 +17,13 @@ export const fetchAddTask = (payload) => {
             window.location.href = "/";
           }, 1000);
         } else {
-          let div = document.querySelector(".mess");
+          let div = document.querySelector(".newTask");
 
-          div.innerHTML("<div>Bad</div>");
+          div.insertAdjacentHTML("afterend", "<div className='mess'>Bad</div>");
+          setTimeout(() => {
+            let delDiv = document.querySelector(".mess");
+            delDiv.remove();
+          }, 1000);
         }
         res.json();
       })
