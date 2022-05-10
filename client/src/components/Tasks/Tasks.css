@@ -14,3 +14,11 @@
 .saveBtn {
   margin: 5px;
 }
+
+@media screen and (max-width: 400px) {
+  .tasks {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+}
