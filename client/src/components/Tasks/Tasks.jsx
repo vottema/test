@@ -18,7 +18,9 @@ const Tasks = ({ tasks }) => {
   }
 
   const change = (event) => {
+    event.preventDefault()
     const id = event.target.id
+    console.log(event.target.name.value);
     const text = inputChangeText.current.value
     const updateText = { id, text }
     dispatch(fetchUpdateTasks(updateText))
@@ -48,7 +50,7 @@ const Tasks = ({ tasks }) => {
                     <button id={task.id} onClick={fulfilled} type="submit" className="btn btn-primary statusBtn">Fulfilled</button>
                     <div className="card-footer bg-transparent border-success">
                       <form id={task.id} onSubmit={change}>
-                        <input ref={inputChangeText} type="text" placeholder='text' />
+                        <input name='changeText' ref={inputChangeText} type="text" placeholder='text' />
                         <button type="submit" className="btn btn-primary saveBtn">Save</button>
                       </form>
                     </div>
