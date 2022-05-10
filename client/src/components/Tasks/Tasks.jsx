@@ -4,6 +4,7 @@ import { useEffect, useRef } from 'react';
 import { fetchCheckAdmin, fetchUpdateTasks } from '../../redux/asyncActionCreators/tasksAAC';
 const Tasks = ({ tasks }) => {
   const dispatch = useDispatch()
+  const inputChangeText = useRef()
 
   useEffect(() => {
     dispatch(fetchCheckAdmin())
@@ -15,12 +16,11 @@ const Tasks = ({ tasks }) => {
     const updateStatus = { id: event.target.id, status: 'fulfilled' }
     dispatch(fetchUpdateTasks(updateStatus))
   }
-  
-  const inputChangeText = useRef()
+
   const change = (event) => {
-    // event.preventDefault()
     const id = event.target.id
-    const updateText = { id, text: inputChangeText.current.value }
+    const text = inputChangeText.current.value
+    const updateText = { id, text }
     dispatch(fetchUpdateTasks(updateText))
 
   }
