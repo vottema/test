@@ -19,7 +19,7 @@ export const fetchAddTask = (payload) => {
         } else {
           let div = document.querySelector(".newTask");
 
-          div.insertAdjacentHTML("afterend", "<div className='mess'>Bad</div>");
+          div.insertAdjacentHTML("afterend", "<div class='mess'>Bad</div>");
           setTimeout(() => {
             let delDiv = document.querySelector(".mess");
             delDiv.remove();
