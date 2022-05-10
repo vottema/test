@@ -42,6 +42,7 @@ function NewTask(props) {
           <input ref={inputText} type="text" className="form-control" id="text" required />
         </div>
         <button type="submit" className="btn btn-primary">Submit</button>
+        <div className='mess'></div>
       </form>
     </center>
   );

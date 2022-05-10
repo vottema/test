@@ -17,9 +17,9 @@ export const fetchAddTask = (payload) => {
             window.location.href = "/";
           }, 1000);
         } else {
-          let div = document.querySelector(".newTask");
+          let div = document.querySelector(".mess");
 
-          div.insertAdjacentHTML("afterend", "<div>Bad</div>");
+          div.innerHTML("<div>Bad</div>");
         }
         res.json();
       })
