@@ -12,14 +12,14 @@ const Tasks = ({ tasks }) => {
   const { admin } = useSelector(state => state.checkAdmin)
 
   const fulfilled = (event) => {
-    console.log(event.target.value);
     const updateStatus = { id: event.target.id, status: 'fulfilled' }
     dispatch(fetchUpdateTasks(updateStatus))
   }
-
+  
   const inputChangeText = useRef()
   const change = (event) => {
     event.preventDefault()
+    console.log(event.target.value);
     const id = event.target.id
     const updateText = { id, text: inputChangeText.current.value }
     dispatch(fetchUpdateTasks(updateText))
