@@ -18,13 +18,9 @@ const Tasks = ({ tasks }) => {
   }
 
   const change = (event) => {
-    event.preventDefault()
     const id = event.target.id
-    console.log(event.target.changeText.value);
-    const text = inputChangeText.current.value
-    const updateText = { id, text }
+    const updateText = { id, text: event.target.changeText.value }
     dispatch(fetchUpdateTasks(updateText))
-
   }
   return (
     <>
