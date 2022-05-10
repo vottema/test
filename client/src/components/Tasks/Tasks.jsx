@@ -18,7 +18,8 @@ const Tasks = ({ tasks }) => {
 
   const change = (event) => {
     const id = event.target.id
-    const updateText = { id, text: event.target.changeText.value }
+    const text = event.target.changeText.value.replace(/(<([^>]+)>)/gi, "")
+    const updateText = { id, text }
     dispatch(fetchUpdateTasks(updateText))
   }
   return (
