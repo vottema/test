@@ -23,8 +23,10 @@ const sessionConfig = {
   secret: process.env.SECRET_KEY || "secret",
   resave: false,
   saveUninitialized: false,
-  httpOnly: true,
-  cookie: { expires: 24 * 60 * 60e3 },
+  cookie: {
+    maxAge: 1000 * 60 * 60,
+    httpOnly: true
+  }
 };
 app.use(session(sessionConfig));
 

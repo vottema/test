@@ -1,11 +1,11 @@
-const express = require('express');
+const express = require("express");
 
 const router = express.Router();
 
-router.get('/', (req, res) => {
+router.get("/", (req, res) => {
   try {
     req.session.destroy();
-    res.clearCookie('sid');
+    res.clearCookie("sid");
   } catch (error) {
     res.end();
   }

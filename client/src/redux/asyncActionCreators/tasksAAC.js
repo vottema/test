@@ -63,8 +63,8 @@ export const fetchCheckAdmin = () => {
     fetch("/checkAdmin", {
       credentials: "include",
     })
-    .then((res) => res.json())
-    .then((data) => dispatch(checkAdmin(data.admin)))
-    .catch((err) => console.log(err.message));
+      .then((res) => res.json())
+      .then((data) => dispatch(checkAdmin(data.admin)))
+      .catch((err) => console.log(err.message));
   };
 };

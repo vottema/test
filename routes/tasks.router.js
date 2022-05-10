@@ -15,7 +15,9 @@ router.route("/sort").post((req, res) => {
 });
 
 router.route("/").post((req, res) => {
-  Task.create(req.body)
+  const { name, email, text, status, change } = req.body;
+
+  Task.create({ name, email, text, status, change })
     .then((newTask) => res.status(201).json(newTask))
     .catch((error) => res.status(500).json(error));
 });

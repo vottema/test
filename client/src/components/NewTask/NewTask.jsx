@@ -24,7 +24,6 @@ function NewTask(props) {
     dispatch(fetchAddTask(newTask))
 
     event.target.reset()
-    // window.location.href = 'http://localhost:3000'
   }
 
   return (
